@@ -1,0 +1,18 @@
+<div style="display: flex; align-content: center; justify-content: center; font-size: .7em; padding: 50px;">
+
+
+  <div class="stylists" ng-repeat="member in team track by member._id" style="display: inline-block; word-wrap: break-word; padding: 20px;">
+
+<div class="img-list">
+<a ui-sref="contact">
+    <img ng-src="{{ member.img }}" height="500px" width="500px"><br>
+<span class="text-content" style="font-size: 1.5em;"><span>{{member.bio}}</span></span>
+  </a>
+</div>
+    <h2>{{member.name}}</h2>
+    <!-- <p style="text-align: left;">
+    {{member.bio}}
+  </p> -->
+
+</div>
+</div>

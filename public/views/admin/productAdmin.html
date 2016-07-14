@@ -1,0 +1,95 @@
+<login-nav></login-nav>
+
+<button class="btn btn-custom btn-lg" data-toggle="modal" data-target="#newProdModal" style="width: 12% padding: 0px; margin: 5px; font-size: 1em;">
+  Add New Product</button>
+
+  <div class="tmplCont">
+
+    <h1>Products</h1>
+  <div class="productCont" style="display: flex; align-content: center; justify-content: center; padding: 2%;">
+  <br/>
+    <div class="product" ng-repeat="product in products" style="max-width: 30%; max-height: 600px; font-size: .8em;">
+
+    <img width="60%" height="250px;" ng-src="{{ product.img }}">
+
+    <h2>{{ product.brand }}</h2>
+    <center><button class="btn btn-custom btn-lg btn-block" style="width: 25%; height: 100%; padding: 2px; margin: 5px;" name="submit" type="submit" ng-click="deleteProd( product._id )">
+      delete
+    </button></center>
+
+    <p>
+
+    {{ product.description }}
+
+    </p>
+    </div>
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+
+<!-- ////////ADD PROD MODAL -->
+
+<div id="newProdModal" class="modal fade" role="dialog" style="z-index: 1000000000">
+  <div class="modal-dialog">
+
+    <div class="newProdForm" style="margin: auto; width: 100%;">
+
+
+<div class="bootstrap-iso" style="margin: auto; padding: 20px; width: 50%;">
+ <div class="container-fluid">
+    <div class="formden_header">
+     <h2>
+      New Product
+     </h2>
+     <p>
+     </p>
+    </div>
+    <form method="post">
+     <div class="form-group ">
+      <label class="control-label requiredField" for="name4">
+       Brand
+       <span class="asteriskField">
+        *
+       </span>
+      </label>
+<!-- NEW PRODUCT BRAND -->
+      <input class="form-control" id="name4" name="name4" type="text" ng-model="newProduct.brand"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="prodUrl">
+       Photo Url
+      </label>
+<!-- NEW PRODUCT IMG URL -->
+      <input class="form-control" id="prodUrl" name="prodUrl" type="text" ng-model="newProduct.img"/>
+     </div>
+     <div class="form-group ">
+      <label class="control-label " for="prodDescription">
+       Description
+      </label>
+<!-- NEW PRODUCT DESCRIPTION -->
+      <textarea class="form-control" cols="40" id="prodDescription" name="prodDescription" rows="10" ng-model="newProduct.description"></textarea>
+     </div>
+     <div class="form-group">
+      <div>
+       <button class="btn btn-custom btn-lg btn-block" name="submit" type="submit" ng-click="addProduct(newProduct)" data-dismiss="modal">
+        Add Product
+       </button>
+      </div>
+     </div>
+    </form>
+   </div>
+</div>
+<!-- new prod form div ends below -->
+</div>
+
+</div>
+</div>
